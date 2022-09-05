@@ -6,8 +6,9 @@ let	WOOF = "WOOF";
 function initialize(){
 	MEOWCOUNTER = Cookies.get('meowcount');
 	console.log(MEOWCOUNTER);
-	if (MEOWCOUNTER === ''){
+	if (!Number.isInteger(MEOWCOUNTER)){
 		MEOWCOUNTER = 0;
+		Cookies.set('meowcount', MEOWCOUNTER);
 	}
 
 	game_input();
