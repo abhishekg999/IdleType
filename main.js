@@ -4,7 +4,7 @@ let	DUCK = "DUCK";
 let	WOOF = "WOOF";
 
 function initialize(){
-	MEOWCOUNTER = Cookies.get('meowcount');
+	MEOWCOUNTER = parseInt(Cookies.get('meowcount'));
 	console.log(MEOWCOUNTER);
 	if (!Number.isInteger(MEOWCOUNTER)){
 		MEOWCOUNTER = 0;
