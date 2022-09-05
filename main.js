@@ -8,7 +8,7 @@ function initialize(){
 	console.log(MEOWCOUNTER);
 	if (!Number.isInteger(MEOWCOUNTER)){
 		MEOWCOUNTER = 0;
-		Cookies.set('meowcount', MEOWCOUNTER);
+		Cookies.set('meowcount', MEOWCOUNTER, { expires: 365 });
 	}
 
 	game_input();
@@ -31,7 +31,7 @@ function clear_input(){
 
 function update_counter(){
 	document.getElementById("meow-count").innerHTML = MEOWCOUNTER;
-	Cookies.set('meowcount', MEOWCOUNTER);
+	Cookies.set('meowcount', MEOWCOUNTER, { expires: 365 });
 }
 
 function game_input() {
