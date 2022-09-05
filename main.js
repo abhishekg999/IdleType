@@ -4,7 +4,8 @@ let	DUCK = "DUCK";
 let	WOOF = "WOOF";
 
 function initialize(){
-	MEOWCOUNTER = parseInt(('; '+document.cookie).split(`; meowcount=`).pop().split(';')[0]);
+	MEOWCOUNTER = Cookies.get('meowcount');
+	console.log(MEOWCOUNTER);
 	if (MEOWCOUNTER === ''){
 		MEOWCOUNTER = 0;
 	}
@@ -29,7 +30,7 @@ function clear_input(){
 
 function update_counter(){
 	document.getElementById("meow-count").innerHTML = MEOWCOUNTER;
-	document.cookie = "meowcount=" + MEOWCOUNTER;
+	Cookies.set('meowcount', MEOWCOUNTER);
 }
 
 function game_input() {
